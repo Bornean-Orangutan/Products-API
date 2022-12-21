@@ -1,0 +1,30 @@
+{
+  "name": "products-api",
+  "version": "1.0.0",
+  "description": "This will be the database and API setup for the overview and related-products widgets within the FEC project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bornean-Orangutan/Products-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bornean-Orangutan/Products-API/issues"
+  },
+  "homepage": "https://github.com/Bornean-Orangutan/Products-API#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "n-readlines": "^1.0.1",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "pg-hstore": "^2.3.4",
+    "pq": "^0.0.3",
+    "sequelize": "^6.28.0"
+  }
+}
