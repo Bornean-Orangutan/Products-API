@@ -1,6 +1,6 @@
 const { Product } = require('./database.js');
 const lineByLine = require('n-readlines');
-const liner = new lineByLine('./server/data/product1.csv');
+const liner = new lineByLine('./server/spreadsheets/product.csv');
 
 let line = liner.next();
 const data = [];
@@ -16,8 +16,6 @@ while (line = liner.next()) {
     default_price: Number(row[5]) || null
   })
 }
-
-console.log(data);
 
 async function saveData() {
   let chunkSize = 100000;

@@ -1,6 +1,6 @@
 const { Photo } = require('./database.js');
 const lineByLine = require('n-readlines');
-const liner = new lineByLine('./server/data/photos1.csv');
+const liner = new lineByLine('./server/spreadsheets/photos.csv');
 
 let line = liner.next();
 const data = [];

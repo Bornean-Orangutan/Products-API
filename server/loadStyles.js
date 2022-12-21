@@ -1,6 +1,6 @@
 const { Style } = require('./database.js');
 const lineByLine = require('n-readlines');
-const liner = new lineByLine('./server/data/styles1.csv');
+const liner = new lineByLine('./server/spreadsheets/styles.csv');
 
 let line = liner.next();
 const data = [];
@@ -16,8 +16,6 @@ while (line = liner.next()) {
     default: Number(row[5]),
   })
 }
-
-console.log(data);
 
 async function saveData() {
   let chunkSize = 100000;

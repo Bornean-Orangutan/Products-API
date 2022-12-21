@@ -1,6 +1,6 @@
 const { Sku } = require('./database.js');
 const lineByLine = require('n-readlines');
-const liner = new lineByLine('./server/data/skus1.csv');
+const liner = new lineByLine('./server/spreadsheets/skus.csv');
 
 let line = liner.next();
 const data = [];

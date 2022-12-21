@@ -1,6 +1,6 @@
 const { Feature } = require('./database.js');
 const lineByLine = require('n-readlines');
-const liner = new lineByLine('./server/data/features1.csv');
+const liner = new lineByLine('./server/spreadsheets/features.csv');
 
 let line = liner.next();
 const data = [];
@@ -14,8 +14,6 @@ while (line = liner.next()) {
     value: row[3].replaceAll('"', ''),
   })
 }
-
-console.log(data);
 
 async function saveData() {
   let chunkSize = 100000;
