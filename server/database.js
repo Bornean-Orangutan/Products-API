@@ -37,7 +37,7 @@ const Product = sequelize.define('Product', {
   }
 })
 
-const Feature = sequelize.define('Feature', {
+const Feature = sequelize.define('feature', {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -79,7 +79,7 @@ const Style = sequelize.define('Style', {
 Product.hasMany(Style);
 Style.belongsTo(Product);
 
-const Photo = sequelize.define('Photo', {
+const Photo = sequelize.define('photo', {
   id: {
     allowNull: false,
     autoIncrement: true,
@@ -97,7 +97,7 @@ const Photo = sequelize.define('Photo', {
 Style.hasMany(Photo);
 Photo.belongsTo(Style);
 
-const Sku = sequelize.define('Sku', {
+const Sku = sequelize.define('sku', {
   id: {
     allowNull: false,
     autoIncrement: true,
