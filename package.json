@@ -4,7 +4,7 @@
   "description": "This will be the database and API setup for the overview and related-products widgets within the FEC project.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "server": "nodemon server/index.js"
   },
   "repository": {
@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/Bornean-Orangutan/Products-API#readme",
   "dependencies": {
+    "axios": "^1.2.1",
     "express": "^4.18.2",
+    "jest": "^29.3.1",
     "n-readlines": "^1.0.1",
     "nodemon": "^2.0.20",
     "pg": "^8.8.0",
