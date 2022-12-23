@@ -2,8 +2,7 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('products', '', '', {
   host: 'localhost',
-  dialect: 'postgres',
-  logging: false
+  dialect: 'postgres'
 })
 
 sequelize.authenticate()
@@ -156,6 +155,7 @@ const Related = sequelize.define('Related', {
 }, {
   indexes: [
     {
+      using: 'BTREE',
       fields: ['current_product_id']
     }
   ]
