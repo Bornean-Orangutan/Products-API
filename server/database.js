@@ -2,7 +2,8 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('products', '', '', {
   host: 'localhost',
-  dialect: 'postgres'
+  dialect: 'postgres',
+  logging: false
 })
 
 sequelize.authenticate()
@@ -50,6 +51,12 @@ const Feature = sequelize.define('feature', {
   value: {
     type: Sequelize.STRING
   }
+}, {
+  indexes: [
+    {
+      fields: ['ProductId']
+    }
+  ]
 })
 
 Product.hasMany(Feature);
@@ -74,6 +81,12 @@ const Style = sequelize.define('Style', {
   default: {
     type: Sequelize.BOOLEAN
   }
+}, {
+  indexes: [
+    {
+      fields:['ProductId']
+    }
+  ]
 })
 
 Product.hasMany(Style);
@@ -92,6 +105,12 @@ const Photo = sequelize.define('photo', {
   thumbnail_url: {
     type: Sequelize.TEXT
   }
+}, {
+  indexes: [
+    {
+      fields: ['StyleId']
+    }
+  ]
 })
 
 Style.hasMany(Photo);
@@ -110,6 +129,12 @@ const Sku = sequelize.define('sku', {
   quantity: {
     type: Sequelize.INTEGER
   }
+}, {
+  indexes: [
+    {
+      fields: ['StyleId']
+    }
+  ]
 })
 
 Style.hasMany(Sku);
@@ -128,6 +153,12 @@ const Related = sequelize.define('Related', {
   related_product_id: {
     type: Sequelize.INTEGER
   }
+}, {
+  indexes: [
+    {
+      fields: ['current_product_id']
+    }
+  ]
 })
 
 sequelize.sync()

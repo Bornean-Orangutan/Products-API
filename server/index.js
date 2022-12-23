@@ -1,9 +1,12 @@
 const express = require('express');
+const compression = require('compression')
 const { Product, Feature, Style, Photo, Sku, Related } = require('./database.js');
 const { Op } = require("sequelize");
 
 const app = express();
-const port = 3000;
+const port = 3002;
+
+app.use(compression())
 
 app.get('/products/', (req, res) => {
   let page = req.query.page || 1;
@@ -38,7 +41,6 @@ app.get('/products/:product_id', (req, res) => {
     })
 })
 
-// needs more work
 app.get('/products/:product_id/styles', (req, res) => {
   Style.findAll({
     where: { ProductId: req.params.product_id },
