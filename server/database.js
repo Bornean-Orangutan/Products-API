@@ -11,8 +11,8 @@ sequelize.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
   })
-  .catch(() => {
-    console.error('Unable to connect to the database.');
+  .catch((error) => {
+    console.log('Unable to connect to the database.', error);
   })
 
 const Product = sequelize.define('Product', {
