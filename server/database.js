@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('products', 'ubuntu', 'ubuntu', {
   host: 'ec2-3-19-28-165.us-east-2.compute.amazonaws.com',
-  post: 5432,
+  port: 5432,
   dialect: 'postgres'
 })
 
