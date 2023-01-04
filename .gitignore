@@ -1,2 +1,3 @@
 spreadsheets/
 node_modules
+.env
