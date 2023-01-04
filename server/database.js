@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('products', 'ubuntu', 'ubuntu', {
-  host: '3.136.159.213',
+  host: 'ec2-3-19-28-165.us-east-2.compute.amazonaws.com',
   post: 5432,
   dialect: 'postgres',
   logging: false
