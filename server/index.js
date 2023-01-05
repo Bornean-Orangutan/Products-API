@@ -8,7 +8,7 @@ const port = 3002;
 
 app.use(compression())
 
-app.get('http://loaderio-5128638a56aa1d549a3663421a6ecfc0', (req, res) => {
+app.get('http://ec2-3-131-93-227.us-east-2.compute.amazonaws.com/loaderio-5128638a56aa1d549a3663421a6ecfc0.txt', (req, res) => {
   res.send('loaderio-5128638a56aa1d549a3663421a6ecfc0');
 })
 
