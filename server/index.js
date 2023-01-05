@@ -8,7 +8,7 @@ const port = 3002;
 
 app.use(compression())
 
-app.get(':3002/loaderio-5128638a56aa1d549a3663421a6ecfc0', (req, res) => {
+app.get('/loaderio-5128638a56aa1d549a3663421a6ecfc0', (req, res) => {
   res.send('loaderio-5128638a56aa1d549a3663421a6ecfc0');
 })
 
