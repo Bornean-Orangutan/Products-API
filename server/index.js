@@ -16,14 +16,12 @@ app.get('/products/', (req, res) => {
   let page = req.query.page || 1;
   let count = req.query.count || 5;
 
-  let ids = [];
-  for (var i = 1; i <= (page * count); i++) {
-    ids.push({id: i});
-  }
-
   Product.findAll({
     where: {
-      [Op.or]: ids
+      id: {
+        [Op.gte]: (page - 1) * count,
+        [Op.lte]: ((page - 1) * count) + count
+      }
     }
   })
     .then((products) => {
