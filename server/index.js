@@ -19,8 +19,8 @@ app.get('/products/', (req, res) => {
   Product.findAll({
     where: {
       id: {
-        [Op.gte]: (page - 1) * count,
-        [Op.lte]: ((page - 1) * count) + count
+        [Op.gte]: ((page * count) - count) + 1,
+        [Op.lte]: (page * count)
       }
     }
   })
