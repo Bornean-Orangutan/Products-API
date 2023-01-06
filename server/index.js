@@ -8,10 +8,6 @@ const port = 3002;
 
 app.use(compression())
 
-app.get('/loaderio-b50a69b1f410671a114ae8dd617998e1', (req, res) => {
-  res.send('loaderio-b50a69b1f410671a114ae8dd617998e1');
-})
-
 app.get('/products/', (req, res) => {
   let page = req.query.page || 1;
   let count = req.query.count || 5;
