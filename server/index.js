@@ -9,6 +9,8 @@ const port = 3002;
 app.use(compression())
 
 app.get('/products/', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
   let page = req.query.page || 1;
   let count = req.query.count || 5;
 
