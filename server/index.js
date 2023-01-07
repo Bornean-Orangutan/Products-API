@@ -26,6 +26,7 @@ app.get('/products/', (req, res) => {
 })
 
 app.get('/products/:product_id', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   Product.findAll({
     where: { id: req.params.product_id },
     attributes: ['id', 'name', 'slogan', 'description', 'category', 'default_price'],
