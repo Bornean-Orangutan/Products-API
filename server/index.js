@@ -43,6 +43,8 @@ app.get('/products/:product_id', (req, res) => {
 })
 
 app.get('/products/:product_id/styles', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
   Style.findAll({
     where: { ProductId: req.params.product_id },
     attributes: [['id', 'style_id'], 'name', 'original_price', 'sale_price', ['default', 'default?']],
@@ -60,6 +62,8 @@ app.get('/products/:product_id/styles', (req, res) => {
 })
 
 app.get('/products/:product_id/related', (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
+
   Related.findAll({ where: { current_product_id: req.params.product_id }, attributes: ['related_product_id']})
     .then((products) => {
       res.send(products.map((product) => product.related_product_id));
